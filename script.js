@@ -26,13 +26,13 @@ var timer = setInterval(function () {
 }, 1000);
 
 var promptimer = 1
-var promptime = setInterval(function() {
+var promptime = setInterval(function utentChoose() {
     promptimer = (promptimer - 1);
     var utentNumbers = []
     if (promptimer === 0) {
         clearInterval(promptimer);
     } 
-    while (askUtentNumbers.length < 5) {
+    while (utentNumbers.length < 5) {
         var askUtentNumbers = parseInt(prompt("INSERISCI I NUMERI CHE TI RICORDI"))
         if (utentNumbers.includes(askUtentNumbers) === false) {
             utentNumbers.push(askUtentNumbers)
@@ -41,6 +41,8 @@ var promptime = setInterval(function() {
      return utentNumbers
 }, 13000);
 
-if (utentNumbers.length === randomNumbersPc) {
+var result = utentChoose()
+
+if (result.lentgh === randomNumbersPc) {
     alert("COMPLIMENTI!!! HAI VINTO")
 }
