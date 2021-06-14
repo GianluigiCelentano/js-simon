@@ -11,22 +11,19 @@ function randomNum () {
 var randomNumbersPc = randomNum()
 
 var time = 10
-
 var timer = setInterval(function () {
     document.getElementById("numbers").innerHTML=("MEMORIZZA QUESTI NUMERI" + " " + randomNumbersPc)
     document.getElementById("time").innerHTML = "COUNTDOWN" + " " + time;
     time = (time - 1);
-
     if (time === - 1) {            
         clearInterval(timer);
         document.getElementById("numbers").style.display = 'none';
         document.getElementById("time").style.display = 'none';
     }
-
 }, 1000);
 
 var promptimer = 1
-var promptime = setInterval(function utentChoose() {
+var promptime = setInterval(function() {
     promptimer = (promptimer - 1);
     var utentNumbers = []
     if (promptimer === 0) {
@@ -36,11 +33,9 @@ var promptime = setInterval(function utentChoose() {
             if (utentNumbers.includes(askUtentNumbers) === false) {
                 utentNumbers.push(askUtentNumbers)
             }
-            if (utentNumbers.length === randomNumbersPc) {
-                alert("COMPLIMENTI!!! HAI VINTO")
-            } 
+            if (utentNumbers === randomNumbersPc) {
+                alert("HAI INDOVINATO")
+            }
         }
     } 
-    
-     return utentNumbers
 }, 13000);
