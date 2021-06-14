@@ -34,10 +34,10 @@ var promptime = setInterval(function() {
     } 
     while (askUtentNumbers.length < 5) {
         var askUtentNumbers = parseInt(prompt("INSERISCI I NUMERI CHE TI RICORDI"))
-        }
-    if (utentNumbers.includes(askUtentNumbers) === false) {
-        utentNumbers.push(askUtentNumbers)
-    } 
+        if (utentNumbers.includes(askUtentNumbers) === false) {
+            utentNumbers.push(askUtentNumbers)
+        } 
+    }
      return utentNumbers
 }, 13000);
 
