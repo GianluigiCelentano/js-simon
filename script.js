@@ -35,15 +35,12 @@ var promptime = setInterval(function utentChoose() {
             var askUtentNumbers = parseInt(prompt("INSERISCI I NUMERI CHE TI RICORDI"))
             if (utentNumbers.includes(askUtentNumbers) === false) {
                 utentNumbers.push(askUtentNumbers)
+            }
+            if (utentNumbers.length === randomNumbersPc) {
+                alert("COMPLIMENTI!!! HAI VINTO")
             } 
         }
     } 
     
      return utentNumbers
 }, 13000);
-
-var result = utentChoose()
-
-if (result.lentgh === randomNumbersPc) {
-    alert("COMPLIMENTI!!! HAI VINTO")
-}
