@@ -10,7 +10,7 @@ function randomNum () {
 } 
 var randomNumbersPc = randomNum()
 
-var time = 30
+var time = 10
 
 var timer = setInterval(function () {
     document.getElementById("numbers").innerHTML=("MEMORIZZA QUESTI NUMERI" + " " + randomNumbersPc)
@@ -27,17 +27,19 @@ var timer = setInterval(function () {
 
 var promptimer = 1
 var promptime = setInterval(function() {
-    var utentNumbers = []
     promptimer = (promptimer - 1);
+    var utentNumbers = []
     if (promptimer === 0) {
         clearInterval(promptimer);
-        var askUtentNumbers = prompt("INSERISCI I NUMERI CHE TI RICORDI")
     } 
+    while (askUtentNumbers.length < 5) {
+        var askUtentNumbers = parseInt(prompt("INSERISCI I NUMERI CHE TI RICORDI"))
+        }
     if (utentNumbers.includes(askUtentNumbers) === false) {
         utentNumbers.push(askUtentNumbers)
     } 
      return utentNumbers
-}, 33000);
+}, 13000);
 
 if (utentNumbers.length === randomNumbersPc) {
     alert("COMPLIMENTI!!! HAI VINTO")
