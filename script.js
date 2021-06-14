@@ -31,13 +31,14 @@ var promptime = setInterval(function utentChoose() {
     var utentNumbers = []
     if (promptimer === 0) {
         clearInterval(promptimer);
+        while (utentNumbers.length < 5) {
+            var askUtentNumbers = parseInt(prompt("INSERISCI I NUMERI CHE TI RICORDI"))
+            if (utentNumbers.includes(askUtentNumbers) === false) {
+                utentNumbers.push(askUtentNumbers)
+            } 
+        }
     } 
-    while (utentNumbers.length < 5) {
-        var askUtentNumbers = parseInt(prompt("INSERISCI I NUMERI CHE TI RICORDI"))
-        if (utentNumbers.includes(askUtentNumbers) === false) {
-            utentNumbers.push(askUtentNumbers)
-        } 
-    }
+    
      return utentNumbers
 }, 13000);
 
