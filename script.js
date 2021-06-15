@@ -22,20 +22,29 @@ var timer = setInterval(function () {
     }
 }, 1000);
 
-var promptimer = 1
-var promptime = setInterval(function() {
+var promptimer = 1;
+var score = 0;
+setTimeout(function() {
     promptimer = (promptimer - 1);
     var utentNumbers = []
     if (promptimer === 0) {
-        clearInterval(promptimer);
+     
         while (utentNumbers.length < 5) {
             var askUtentNumbers = parseInt(prompt("INSERISCI I NUMERI CHE TI RICORDI"))
             if (utentNumbers.includes(askUtentNumbers) === false) {
                 utentNumbers.push(askUtentNumbers)
             }
-            if (utentNumbers === randomNumbersPc) {
-                alert("HAI INDOVINATO")
-            }
+
         }
     } 
+    for (var x = 0; x < utentNumbers.length; x++ ) {
+        if(randomNumbersPc.includes(utentNumbers[x])) {
+            score++;
+        }
+    }
+    if(score > 0) {
+        alert('Hai indovinato ' + score + ' numeri');
+    } else {
+        alert('Non hai indovinato nessun numero!');
+    }
 }, 13000);
